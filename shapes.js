@@ -9,6 +9,7 @@ var svg = d3.select("body").append("svg")
     .enter().append('rect')
     //stylin
     .attr("fill", "pink")
+    //Mandatory attributes are h, w, x, y
     .attr("height",function(d,i){return d*15;})
     .attr("width","50")
     //to make dynamic we need to use a function d = data point i = index
