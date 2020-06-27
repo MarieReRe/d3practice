@@ -7,6 +7,8 @@ var svg = d3.select("body").append("svg")
     svg.selectAll('rect')
     .data(dataArray)
     .enter().append('rect')
+    //stylin
+    .attr("fill", "pink")
     .attr("height",function(d,i){return d*15;})
     .attr("width","50")
     //to make dynamic we need to use a function d = data point i = index
