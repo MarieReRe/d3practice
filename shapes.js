@@ -42,4 +42,14 @@ svg.selectAll('ellipse.secondSet')
     .attr("rx", function(d,i){return d*3; })
     .attr("ry", "30");
 
+// Lines
+var newX = 900;
+svg.selectAll('line')
+    .data(dataArray)
+    .enter().append('line')
+    .attr("x1", function(d,i){newX +=(d*3)+(i*20); return newX;})
+    .attr("y1", "100")
+    .attr("x2", function(d,i){return d*3; })
+    .attr("y2", "30");
+
 

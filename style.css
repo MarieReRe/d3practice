@@ -1,4 +1,10 @@
 html, body {
   margin: 0;
+  padding: 50px;
   height: 100%;
+}
+h1 {
+  color: blueviolet;
+  text-align: center;
+  font-size: 130px;
 }
