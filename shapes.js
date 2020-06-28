@@ -1,4 +1,4 @@
-var dataArray = [5, 11, 18, 3];
+var dataArray = [5, 11, 18];
 
 var svg = d3.select("body").append("svg")
     .attr("height", "100%")
@@ -44,12 +44,12 @@ svg.selectAll('ellipse.secondSet')
 
 // Lines
 var newX = 900;
-svg.selectAll('line')
+svg.selectAll("line")
     .data(dataArray)
-    .enter().append('line')
-    .attr("x1", function(d,i){newX +=(d*3)+(i*20); return newX;})
-    .attr("y1", "100")
-    .attr("x2", function(d,i){return d*3; })
-    .attr("y2", "30");
-
-
+    .enter().append("line")
+    .attr("stroke", "orange")
+    .attr("stroke-width", "14")
+    .attr("x1", newX)
+    .attr("y1", function (d, i) { return 80 + (i * 20); })
+    .attr("x2", function (d) { return newX + (d * 15); })
+    .attr("y2", function (d, i) { return 80 + (i * 20); });
