@@ -10,7 +10,7 @@ var svg = d3.select("body")
 var line = d3.line()
     .x(function(d){return d.x*6;})
     .y(function(d){return d.y*4;})
-
+    .curve(d3.curveStep);
 
 svg.append("path")
 .attr("fill", "none")
