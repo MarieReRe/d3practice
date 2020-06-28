@@ -1,4 +1,4 @@
-var dataArray = [5, 11, 18];
+var dataArray = [5, 11, 18, 3];
 
 var svg = d3.select("body").append("svg")
     .attr("height", "100%")
