@@ -1,4 +1,4 @@
-var dataArray = [5, 11, 18, 3];
+var dataArray = [5, 11, 18];
 
 var svg = d3.select("body").append("svg")
     .attr("height", "100%")
@@ -7,8 +7,6 @@ var svg = d3.select("body").append("svg")
 svg.selectAll('rect')
     .data(dataArray)
     .enter().append('rect')
-    //stylin
-    .attr("fill", "pink")
     //Mandatory attributes are h, w, x, y
     .attr("height", function (d, i) { return d * 15; })
     .attr("width", "50")
@@ -23,7 +21,6 @@ svg.selectAll('circle.firstSet')
     .data(dataArray)
     .enter().append('circle')
     .attr("class", "firstSet")
-    .attr("fill", "green")
     .attr("cx", function(d,i){newX +=(d*3)+(i*20); return newX;})
     .attr("cy", "100")
     .attr("r", function(d,i){return d*3; });
@@ -36,10 +33,17 @@ svg.selectAll('ellipse.secondSet')
     .data(dataArray)
     .enter().append('ellipse')
     .attr("class", "secondSet")
-    .attr("fill", "purple")
     .attr("cx", function(d,i){newX +=(d*3)+(i*20); return newX;})
     .attr("cy", "100")
     .attr("rx", function(d,i){return d*3; })
     .attr("ry", "30");
 
-
+// Lines
+var newX = 900;
+svg.selectAll("line")
+    .data(dataArray)
+    .enter().append("line")
+    .attr("x1", newX)
+    .attr("y1", function (d, i) { return 80 + (i * 20); })
+    .attr("x2", function (d) { return newX + (d * 15); })
+    .attr("y2", function (d, i) { return 80 + (i * 20); });
